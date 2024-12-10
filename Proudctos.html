@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPS Vacunate SAS - Productos</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 flex items-center justify-center h-screen">
+    <div class="w-full max-w-md bg-white bg-opacity-50 rounded-lg shadow-md p-8">
+        <h2 class="text-2xl font-semibold text-gray-800 text-center mb-6">Gestión de Productos</h2>
+        <form action="Productos.php" method="POST">
+            <!-- Nombre del Producto -->
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="nombre_producto">Nombre del Producto</label>
+                <input type="text" name="nombre_producto" id="nombre_producto" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Ingrese el nombre del producto">
+            </div>
+
+
+            <!-- Valor -->
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="valor">Valor</label>
+                <input type="number" step="0.01" name="valor" id="valor" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Ingrese el valor del producto">
+            </div>
+
+            <!-- Cantidad -->
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="cantidad">Cantidad</label>
+                <input type="number" name="cantidad" id="cantidad" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Ingrese la cantidad del producto">
+            </div>
+
+            <!-- Valor Total (calculado) -->
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="valor_total">Valor Total</label>
+                <input type="text" name="valor_total" id="valor_total" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Valor total" readonly>
+            </div>
+
+            <!-- Botones CRUD -->
+            <div class="grid grid-cols-2 gap-4">
+                <button type="submit" name="accion" value="create" class="w-full bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none">
+                    Crear
+                </button>
+                <button type="submit" name="accion" value="read" class="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none">
+                    Buscar
+                </button>
+                <button type="submit" name="accion" value="update" class="w-full bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded focus:outline-none">
+                    Actualizar
+                </button>
+                <button type="submit" name="accion" value="delete" class="w-full bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none">
+                    Eliminar
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <style>
+        body {
+            background-image: url('https://64.media.tumblr.com/d46e5525f8aa78713aaa64fe999a6ee2/tumblr_inline_nfpj94Cr6R1s6lw3t.gif');
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            margin: 0;
+            height: 100vh;
+        }
+    </style>
+
+    <script>
+        // Función para calcular el valor total automáticamente
+        document.getElementById('cantidad').addEventListener('input', calcularValorTotal);
+        document.getElementById('valor').addEventListener('input', calcularValorTotal);
+
+        function calcularValorTotal() {
+            var cantidad = parseFloat(document.getElementById('cantidad').value) || 0;
+            var valor = parseFloat(document.getElementById('valor').value) || 0;
+            var valorTotal = cantidad * valor;
+            document.getElementById('valor_total').value = valorTotal.toFixed(2); // Mostrar con dos decimales
+        }
+    </script>
+</body>
+</html>

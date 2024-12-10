@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú Principal - Salud</title>
+    <!-- Vincular Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Personalización adicional de colores si es necesario */
+        .hero-section {
+            background-color: #000000;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 font-sans">
+
+    <!-- Barra de navegación con el logo -->
+    <nav class="bg-teal-500 p-4"> <!-- Cambio de color a teal-500 -->
+        <div class="container mx-auto flex justify-between items-center">
+            <img src="https://i.pinimg.com/originals/0d/0b/21/0d0b211c1ecc0562b9f4c2a4305c9436.jpg" alt="Logo" class="w-12 h-auto">
+        </div>
+    </nav>
+
+    <!-- Sección Hero (Encabezado) -->
+    <div class="hero-section text-white text-center py-24">
+        <h1 class="text-4xl font-bold text-yellow-400">Bienvenido al Menú de Salud</h1> <!-- Cambio de color del título -->
+        <p class="mt-4 text-2xl text-gray-200">Realiza distintas tareas para tu empresa</p> <!-- Cambio de color del subtítulo -->
+    </div>
+
+    <!-- Contenedor del menú -->
+    <div class="container mx-auto mt-12">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+            <!-- Card 1: Información de Salud -->
+            <div class="bg-white shadow-lg rounded-lg overflow-hidden transform hover:scale-105 transition duration-300">
+                <div class="p-6 text-center">
+                    <h5 class="text-xl font-semibold text-blue-700">Clientes</h5> <!-- Cambio de color del título -->
+                    <p class="mt-2 text-gray-600">Realiza acciones referentes a los clientes.</p> <!-- Cambio de color del texto -->
+                    <a href="htmlCRUD.html" class="mt-4 inline-block px-6 py-3 bg-teal-600 text-white rounded-lg hover:bg-teal-700">Ir a Clientes</a> <!-- Enlace corregido -->
+                </div>
+            </div>
+
+            <!-- Card 2: Consultas Médicas -->
+            <div class="bg-white shadow-lg rounded-lg overflow-hidden transform hover:scale-105 transition duration-300">
+                <div class="p-6 text-center">
+                    <h5 class="text-xl font-semibold text-blue-700">Productos</h5> <!-- Cambio de color del título -->
+                    <p class="mt-2 text-gray-600">Realiza acciones referentes a los productos.</p> <!-- Cambio de color del texto -->
+                    <a href="Proudctos.html" class="mt-4 inline-block px-6 py-3 bg-teal-600 text-white rounded-lg hover:bg-teal-700">Ir a Productos</a> <!-- Enlace corregido -->
+                </div>
+            </div>
+
+            <!-- Card 3: Emergencias y Primeros Auxilios -->
+            <div class="bg-white shadow-lg rounded-lg overflow-hidden transform hover:scale-105 transition duration-300">
+                <div class="p-6 text-center">
+                    <h5 class="text-xl font-semibold text-blue-700">Facturas</h5> <!-- Cambio de color del título -->
+                    <p class="mt-2 text-gray-600">Realiza acciones referentes a las facturas.</p> <!-- Cambio de color del texto -->
+                    <a href="Facturas.html" class="mt-4 inline-block px-6 py-3 bg-teal-600 text-white rounded-lg hover:bg-teal-700">Ir a Facturas</a> <!-- Enlace corregido -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
